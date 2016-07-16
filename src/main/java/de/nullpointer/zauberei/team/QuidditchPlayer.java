@@ -29,6 +29,7 @@ public class QuidditchPlayer {
 		for (Material m : items) {
 			inv.addItem(new ItemStack(m));
 		}
+		player.updateInventory();
 	}
 	
 	public Player getPlayer() {
