@@ -4,5 +4,5 @@ version: 1.0
 author: NullPointer
 commands:
   quiddich:
-    usage: /quiddich [start]
+    usage: /quiddich [start|stop]
     description: Quiddich game administration

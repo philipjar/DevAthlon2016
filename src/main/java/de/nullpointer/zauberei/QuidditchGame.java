@@ -1,16 +1,12 @@
 package main.java.de.nullpointer.zauberei;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Iterator;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.mysql.fabric.xmlrpc.base.Array;
 
 import main.java.de.nullpointer.zauberei.ball.QuidditchBall;
 import main.java.de.nullpointer.zauberei.team.QuidditchPlayer;
@@ -24,11 +20,14 @@ public class QuidditchGame {
 	protected QuidditchTeam teamB;
 	
 	protected QuidditchBall ball;
+
+	private Location middle;
 	
 	public QuidditchGame(JavaPlugin plugin, Location middle, Location[] gatesA,
 			Location[] gatesB, Player... players) {
 		
 		this.plugin = plugin;
+		this.middle = middle;
 		
 	}
 	
@@ -51,7 +50,9 @@ public class QuidditchGame {
 		teamA = new QuidditchTeam("RED", teamListA);
 		teamB = new QuidditchTeam("BLUE", teamListA);
 		
-		//TODO: porten
+		for (QuidditchPlayer qp : getAllPlayers()) {
+			qp.getPlayer().teleport(middle);
+		}
 		
 		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new QuidditchThread(this), 0L, 2L);
 	}

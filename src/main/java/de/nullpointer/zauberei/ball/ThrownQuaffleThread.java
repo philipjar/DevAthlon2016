@@ -1,8 +1,5 @@
 package main.java.de.nullpointer.zauberei.ball;
 
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
 import main.java.de.nullpointer.zauberei.Main;
 import main.java.de.nullpointer.zauberei.Util;
 import main.java.de.nullpointer.zauberei.team.QuidditchPlayer;
