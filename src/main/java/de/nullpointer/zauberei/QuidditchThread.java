@@ -13,6 +13,7 @@ public class QuidditchThread implements Runnable {
 
 	@Override
 	public void run() {
+		
 		while (countdown > 0) {
 			Bukkit.broadcastMessage(String.valueOf(countdown));
 			try {
