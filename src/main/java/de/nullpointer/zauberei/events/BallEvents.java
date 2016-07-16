@@ -1,13 +1,12 @@
 package main.java.de.nullpointer.zauberei.events;
 
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
+import main.java.de.nullpointer.zauberei.ball.ThrownQuaffle;
 
 public class BallEvents implements Listener {
 
@@ -22,9 +21,7 @@ public class BallEvents implements Listener {
 
 				p.getInventory().remove(p.getItemInHand());
 
-				Item quaffle = p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.REDSTONE_BLOCK));
-
-				quaffle.setVelocity(p.getLocation().getDirection().multiply(2.0D));
+				ThrownQuaffle quaffle = new ThrownQuaffle(p);
 
 			}
 		}
