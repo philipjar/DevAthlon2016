@@ -4,20 +4,32 @@ import java.util.Arrays;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
+import main.java.de.nullpointer.zauberei.ball.QuidditchBall;
 import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
 
 public class QuidditchGame {
 	
-	private QuidditchTeam teamA;
-	private QuidditchTeam teamB;
+	private JavaPlugin plugin;
 	
-	public QuidditchGame(Location middle, Location[] gates, Player... players) {
+	protected QuidditchTeam teamA;
+	protected QuidditchTeam teamB;
+	
+	protected QuidditchBall snitch;
+	protected QuidditchBall quaffle;
+	protected QuidditchBall bludgerA;
+	protected QuidditchBall bludgerB;
+	
+	public QuidditchGame(JavaPlugin plugin, Location middle, Location[] gatesA,
+			Location[] gatesB, Player... players) {
 		
 		if (players.length != 14) {
 			System.out.println("Inkorrekte Spieleranzahl: " + String.valueOf(players.length));
 			return;
 		}
+		
+		this.plugin = plugin;
 		
 		Player[] teamListA = new Player[7];
 		Player[] teamListB = new Player[7];
@@ -33,7 +45,7 @@ public class QuidditchGame {
 	}
 	
 	public void start() {
-		
+		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new QuidditchThread(this), 0L, 2L);
 	}
 
 }
