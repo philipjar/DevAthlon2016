@@ -20,11 +20,13 @@ public class CommandListener implements CommandExecutor {
 				if(args[0].equalsIgnoreCase("start")) {
 					// Start game
 					sender.sendMessage("Spiel wurde gestartet! ");
+					return true;
 				}
 				
 				if(args[0].equalsIgnoreCase("stop")) {
 					// Stop game
 					sender.sendMessage("Spiel gestoppt");
+					return true;
 				}
 				
 			} else {
