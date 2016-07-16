@@ -9,23 +9,18 @@ import org.bukkit.inventory.ItemStack;
 
 public class QuidditchPlayer {
 	
-	public enum Playertype {
-		BEATER, CHASER, SEEKER, KEEPER
-	};
-	
 	protected static Material[] items = new Material[]{
 			Material.COMPASS,
 			Material.STICK
 	};
 	
 	private Player player;
-	private Playertype type;
 	private QuidditchTeam team;
 	
-	public QuidditchPlayer(Player player, Playertype type, QuidditchTeam team) {
+	public QuidditchPlayer(Player player, QuidditchTeam team) {
 		this.player = player;
-		this.type = type;
 		this.team = team;
+		fillInventory();
 	}
 	
 	public void fillInventory() {
@@ -34,10 +29,6 @@ public class QuidditchPlayer {
 		for (Material m : items) {
 			inv.addItem(new ItemStack(m));
 		}
-	}
-	
-	public Playertype getQuidditchType() {
-		return type;
 	}
 	
 	public QuidditchTeam getTeam() {
