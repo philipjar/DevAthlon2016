@@ -10,7 +10,8 @@ public class QuidditchThread implements Runnable {
 
 	@Override
 	public void run() {
-		// Check if a ball hit a gate
+		// Check if a ball hit a gate or Chaser
+		
 	}
 
 }
