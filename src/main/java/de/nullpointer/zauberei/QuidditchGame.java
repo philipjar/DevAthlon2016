@@ -50,6 +50,7 @@ public class QuidditchGame {
 		teamA = new QuidditchTeam("RED", teamListA);
 		teamB = new QuidditchTeam("BLUE", teamListA);
 		
+		// Teleport
 		for (QuidditchPlayer qp : getAllPlayers()) {
 			qp.getPlayer().teleport(middle);
 		}

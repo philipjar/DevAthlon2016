@@ -1,7 +1,9 @@
 package main.java.de.nullpointer.zauberei.team;
 
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Vehicle;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -14,6 +16,8 @@ public class QuidditchPlayer {
 	
 	private Player player;
 	private QuidditchTeam team;
+	
+	private Vehicle broom;
 	
 	public QuidditchPlayer(Player player, QuidditchTeam team) {
 		this.player = player;
@@ -36,6 +40,15 @@ public class QuidditchPlayer {
 	
 	public QuidditchTeam getTeam() {
 		return team;
+	}
+	
+	public void giveBroom() {
+		broom = (Vehicle) player.getWorld().spawnEntity(player.getLocation(), EntityType.BOAT);
+		broom.setPassenger(player);
+	}
+	
+	public void removeBroom() {
+		broom.eject();
 	}
 
 	public void giveQuaffle() {
