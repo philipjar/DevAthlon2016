@@ -15,7 +15,7 @@ public class QuidditchTeam {
 	private QuidditchPlayer keeper;
 	private QuidditchPlayer seeker;
 	
-	public QuidditchTeam(String name, Player... players) {
+	public QuidditchTeam(String name, Player[] players) {
 		
 		teamname = name;
 		
