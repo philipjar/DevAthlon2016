@@ -6,7 +6,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.vehicle.VehicleMoveEvent;
 
+import main.java.de.nullpointer.zauberei.Main;
+
 public class FlyEvents implements Listener {
+	
+	public FlyEvents(Main plugin) {
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+	}
 
 	@EventHandler
 	public void onVehicleDrive(VehicleMoveEvent e) {

@@ -7,7 +7,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import main.java.de.nullpointer.zauberei.Main;
+
 public class InteractEvents implements Listener {
+
+	public InteractEvents(Main plugin) {
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+	}
 
 	@SuppressWarnings("deprecation")
 	@EventHandler
