@@ -9,7 +9,7 @@ import main.java.de.nullpointer.zauberei.events.InteractEvents;
 public class Main extends JavaPlugin {
 
 	CommandListener cListener;
-	QuidditchGame game;
+	public static QuidditchGame game;
 
 	@Override
 	public void onEnable() {
@@ -20,6 +20,8 @@ public class Main extends JavaPlugin {
 
 		cListener = new CommandListener(this);
 		getCommand("quiddich").setExecutor(cListener);
+		
+		game = null;//new QuidditchGame(plugin, middle, gatesA, gatesB, players);
 
 	}
 
