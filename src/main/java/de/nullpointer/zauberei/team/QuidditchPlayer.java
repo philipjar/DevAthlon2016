@@ -1,7 +1,5 @@
 package main.java.de.nullpointer.zauberei.team;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -38,6 +36,13 @@ public class QuidditchPlayer {
 	
 	public QuidditchTeam getTeam() {
 		return team;
+	}
+
+	public void giveQuaffle() {
+		ItemStack item = new ItemStack(Material.REDSTONE_BLOCK);
+		item.getItemMeta().setDisplayName("Quaffel");
+		player.getInventory().addItem(item);
+		player.updateInventory();
 	}
 
 }
