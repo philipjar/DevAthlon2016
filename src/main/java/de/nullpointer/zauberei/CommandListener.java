@@ -19,6 +19,7 @@ public class CommandListener implements CommandExecutor {
 				
 				if(args[0].equalsIgnoreCase("start")) {
 					// Start game
+					plugin.game.start();
 					sender.sendMessage("Spiel wurde gestartet! ");
 					return true;
 				}
