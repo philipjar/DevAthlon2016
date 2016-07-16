@@ -15,6 +15,8 @@ public class ThrownQuaffle {
 
 		item = thrower.getWorld().dropItem(thrower.getLocation(), new ItemStack(Material.REDSTONE_BLOCK));
 		item.setVelocity(thrower.getLocation().getDirection().multiply(2.0D));
+		
+		new ThrownQuaffleThread(this);
 
 	}
 

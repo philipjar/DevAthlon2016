@@ -1,5 +1,6 @@
 package main.java.de.nullpointer.zauberei.ball;
 
+import main.java.de.nullpointer.zauberei.ConfigManager;
 import main.java.de.nullpointer.zauberei.Main;
 import main.java.de.nullpointer.zauberei.Util;
 import main.java.de.nullpointer.zauberei.team.QuidditchPlayer;
@@ -23,6 +24,12 @@ public class ThrownQuaffleThread implements Runnable {
 					qp.giveQuaffle();
 				}
 			}
+			
+			/*
+			 * 
+			 * Check for goal hit --> Call goal
+			 * 
+			 */
 			
 			try { Thread.sleep(1); } catch (InterruptedException e) { e.getMessage(); } 
 			

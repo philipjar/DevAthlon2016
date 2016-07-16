@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 public class QuidditchTeam {
 	
 	private String teamname;
+	private int points = 0;
 	
 	private ArrayList<QuidditchPlayer> players = new ArrayList<>();
 	
@@ -24,6 +25,14 @@ public class QuidditchTeam {
 	
 	public String getName() {
 		return teamname;
+	}
+	
+	public void addGoalPoints() {
+		points = points + 10;
+	}
+	
+	public int getPoints() {
+		return points;
 	}
 	
 	public ArrayList<QuidditchPlayer> getPlayers() {

@@ -27,7 +27,7 @@ public class BallEvents implements Listener {
 
 				p.getInventory().remove(p.getItemInHand());
 
-				ThrownQuaffle quaffle = new ThrownQuaffle(p);
+				new ThrownQuaffle(p);
 
 			}
 		}

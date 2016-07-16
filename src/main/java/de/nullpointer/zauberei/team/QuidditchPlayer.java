@@ -44,11 +44,13 @@ public class QuidditchPlayer {
 	
 	public void giveBroom() {
 		broom = (Vehicle) player.getWorld().spawnEntity(player.getLocation(), EntityType.BOAT);
+		broom.setGravity(false);
 		broom.setPassenger(player);
 	}
 	
 	public void removeBroom() {
 		broom.eject();
+		broom.remove();
 	}
 
 	public void giveQuaffle() {
