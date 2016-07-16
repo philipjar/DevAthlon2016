@@ -23,7 +23,7 @@ public class Main extends JavaPlugin {
 		cListener = new CommandListener(this);
 		getCommand("quiddich").setExecutor(cListener);
 		
-		game = null;//new QuidditchGame(plugin, middle, gatesA, gatesB, players);
+		game = new QuidditchGame(this); 
 
 	}
 

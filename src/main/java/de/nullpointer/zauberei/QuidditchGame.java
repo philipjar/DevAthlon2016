@@ -23,9 +23,9 @@ public class QuidditchGame {
 
 	private Location middle;
 	
-	public QuidditchGame(JavaPlugin plugin, Location middle, Location[] gatesA,
-			Location[] gatesB, Player... players) {
+	public QuidditchGame(JavaPlugin plugin) {
 		
+		this.middle = ConfigManager.getMiddleLocation();
 		this.plugin = plugin;
 		this.middle = middle;
 		
