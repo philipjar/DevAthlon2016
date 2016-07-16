@@ -17,6 +17,8 @@ public class Main extends JavaPlugin {
 		new BallEvents(this);
 		new FlyEvents(this);
 		new InteractEvents(this);
+		
+		ConfigManager.plugin = this;
 
 		cListener = new CommandListener(this);
 		getCommand("quiddich").setExecutor(cListener);
