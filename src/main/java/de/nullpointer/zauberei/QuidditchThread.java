@@ -2,6 +2,8 @@ package main.java.de.nullpointer.zauberei;
 
 import org.bukkit.Bukkit;
 
+import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
+
 public class QuidditchThread implements Runnable {
 	
 	private QuidditchGame game;
@@ -25,7 +27,12 @@ public class QuidditchThread implements Runnable {
 		
 		// LOS
 		
-		//TODO: random ball geben
+		// Random ball geben
+		if (QuidditchTeam.random.nextBoolean()) {
+			game.teamA.getRandomPlayer().giveQuaffle();
+		} else {
+			game.teamB.getRandomPlayer().giveQuaffle();
+		}
 	}
 
 }
