@@ -22,5 +22,13 @@ public class QuidditchTeam {
 	public String getName() {
 		return teamname;
 	}
+	
+	public ArrayList<Player> getPlayers() {
+		ArrayList<Player> out = new ArrayList<>();
+		for (QuidditchPlayer qp : players) {
+			out.add(qp.getPlayer());
+		}
+		return out;
+	}
 
 }

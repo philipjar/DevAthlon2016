@@ -31,6 +31,10 @@ public class QuidditchPlayer {
 		}
 	}
 	
+	public Player getPlayer() {
+		return player;
+	}
+	
 	public QuidditchTeam getTeam() {
 		return team;
 	}

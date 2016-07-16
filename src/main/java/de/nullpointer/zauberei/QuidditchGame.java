@@ -10,6 +10,8 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.mysql.fabric.xmlrpc.base.Array;
+
 import main.java.de.nullpointer.zauberei.ball.QuidditchBall;
 import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
 
@@ -51,6 +53,12 @@ public class QuidditchGame {
 		//TODO: porten
 		
 		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new QuidditchThread(this), 0L, 2L);
+	}
+	
+	public ArrayList<Player> getAllPlayers() {
+		ArrayList<Player> out = teamA.getPlayers();
+		out.addAll(teamB.getPlayers());
+		return out;
 	}
 
 }
