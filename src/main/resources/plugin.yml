@@ -2,3 +2,7 @@ name: DevAthlon2016
 main: de.nullpointer.zauberei.Main
 version: 1.0
 author: NullPointer
+commands:
+  quiddich:
+    usage: /quiddich [start]
+    description: Quiddich game administration
