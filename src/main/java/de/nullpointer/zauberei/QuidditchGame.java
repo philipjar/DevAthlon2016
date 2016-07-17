@@ -84,7 +84,7 @@ public class QuidditchGame {
 	
 	public void stop(String name, ChatColor c) {
 		thread.halt();
-		Bukkit.broadcastMessage("Team " + c + " gewinnt dieses Quidditch-Match" + ChatColor.RESET);
+ 			Bukkit.broadcastMessage("Team " + c + " gewinnt dieses Quidditch-Match" + ChatColor.RESET);
 		for (QuidditchPlayer p : getAllPlayers()) {
 			p.removeBroom();
 		}
