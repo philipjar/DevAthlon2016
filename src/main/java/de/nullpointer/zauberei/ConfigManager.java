@@ -31,6 +31,16 @@ public class ConfigManager {
 		return new Location(Bukkit.getWorld(name), x, y, z);
 	}
 	
+	public static void setQuidditchWorldDefaults() {
+		plugin.getConfig().addDefault("worldname", "Quidditch");
+		
+		plugin.getConfig().addDefault("location.middle.x", 0);
+		plugin.getConfig().addDefault("location.middle.y", 0);
+		plugin.getConfig().addDefault("location.middle.z", 70);
+		
+		// TODO: Gate Locations
+	}
+	
 	
 
 }
