@@ -11,6 +11,8 @@ public class QuidditchThread implements Runnable {
 	private QuidditchGame game;
 	private int countdown = 5;
 	
+	private boolean halt = false;
+	
 	public QuidditchThread(QuidditchGame game) {
 		this.game = game;
 	}
@@ -49,6 +51,15 @@ public class QuidditchThread implements Runnable {
 		for (QuidditchPlayer p : game.teamB.getPlayers()) {
 			p.getPlayer().sendMessage("Du bist in Team " + ChatColor.BLUE + "A" + ChatColor.RESET);
 		}
+		
+		// BIG FAT WHILE LOOP
+		while (!halt) {
+			
+		}
+	}
+	
+	public void halt() {
+		halt = true;
 	}
 
 }
