@@ -31,8 +31,13 @@ public class ConfigManager {
 		return new Location(Bukkit.getWorld(name), x, y, z);
 	}
 	
+	public static int getWinningPoints() {
+		return plugin.getConfig().getInt("winningpoints");
+	}
+	
 	public static void setQuidditchWorldDefaults() {
 		plugin.getConfig().addDefault("worldname", "Quidditch");
+		plugin.getConfig().addDefault("winningpoints", 100);
 		
 		plugin.getConfig().addDefault("location.middle.x", 0);
 		plugin.getConfig().addDefault("location.middle.y", 0);
