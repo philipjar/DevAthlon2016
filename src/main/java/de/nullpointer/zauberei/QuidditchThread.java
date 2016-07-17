@@ -1,10 +1,10 @@
 package main.java.de.nullpointer.zauberei;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 import main.java.de.nullpointer.zauberei.team.QuidditchPlayer;
 import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
-import net.md_5.bungee.api.ChatColor;
 
 public class QuidditchThread implements Runnable {
 	
