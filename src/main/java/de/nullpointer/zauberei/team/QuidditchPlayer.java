@@ -29,7 +29,12 @@ public class QuidditchPlayer {
 		Inventory inv = player.getInventory();
 		inv.clear();
 		for (Material m : items) {
-			inv.addItem(new ItemStack(m));
+			ItemStack item = new ItemStack(m);
+			if (m == Material.COMPASS)
+				item.getItemMeta().setDisplayName("Sucher");
+			if (m == Material.STICK)
+				item.getItemMeta().setDisplayName("Aktiviere/Deaktiviere Hovermode");
+			inv.addItem(item);
 		}
 		player.updateInventory();
 	}

@@ -8,9 +8,10 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import main.java.de.nullpointer.zauberei.Main;
+import main.java.de.nullpointer.zauberei.QuidditchGame.Gamestate;
 
 public class InteractEvents implements Listener {
-	
+
 	public InteractEvents(Main plugin) {
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
@@ -18,13 +19,15 @@ public class InteractEvents implements Listener {
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlayerClick(PlayerInteractEvent e) {
-		if (e.getAction() == Action.RIGHT_CLICK_AIR | e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-			Player p = e.getPlayer();
-			Material itemInHand = p.getItemInHand().getType();
-			if (itemInHand == Material.BLAZE_ROD) {
-				p.getItemInHand().setType(Material.STICK);
-			} else if (itemInHand == Material.STICK) {
-				p.getItemInHand().setType(Material.BLAZE_ROD);
+		if (Main.game.getGamestate() == Gamestate.STARTED) {
+			if (e.getAction() == Action.RIGHT_CLICK_AIR | e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+				Player p = e.getPlayer();
+				Material itemInHand = p.getItemInHand().getType();
+				if (itemInHand == Material.BLAZE_ROD) {
+					p.getItemInHand().setType(Material.STICK);
+				} else if (itemInHand == Material.STICK) {
+					p.getItemInHand().setType(Material.BLAZE_ROD);
+				}
 			}
 		}
 	}

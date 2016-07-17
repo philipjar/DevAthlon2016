@@ -15,6 +15,14 @@ import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
 
 public class QuidditchGame {
 	
+	public enum Gamestate {
+		READY, 
+		STARTED,
+		STOPPED
+	}
+	
+	private Gamestate gamestate = Gamestate.READY;
+	
 	private JavaPlugin plugin;
 	
 	protected QuidditchTeam teamA;
@@ -34,7 +42,16 @@ public class QuidditchGame {
 		
 	}
 	
+	public Gamestate getGamestate() {
+		return this.gamestate;
+	}
+	
+	public void setGamestate(Gamestate state) {
+		this.gamestate = state;
+	}
+	
 	public void start() {
+		
 		boolean a = true;
 		ArrayList<Player> teamListA = new ArrayList<>();
 		ArrayList<Player> teamListB = new ArrayList<>();
@@ -58,8 +75,11 @@ public class QuidditchGame {
 			qp.getPlayer().teleport(middle);
 		}
 		
+
 		thread = new QuidditchThread(this);
 		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, thread, 0L, 2L);
+		
+		setGamestate(Gamestate.STARTED);
 	}
 	
 	public void stop(String name, ChatColor c) {
@@ -68,6 +88,7 @@ public class QuidditchGame {
 		for (QuidditchPlayer p : getAllPlayers()) {
 			p.removeBroom();
 		}
+		setGamestate(Gamestate.STOPPED);
 	}
 	
 	public ArrayList<QuidditchPlayer> getAllPlayers() {

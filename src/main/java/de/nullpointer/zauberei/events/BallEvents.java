@@ -8,27 +8,31 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import main.java.de.nullpointer.zauberei.Main;
+import main.java.de.nullpointer.zauberei.QuidditchGame.Gamestate;
 import main.java.de.nullpointer.zauberei.ball.ThrownQuaffle;
 
 public class BallEvents implements Listener {
-	
+
 	public BallEvents(Main plugin) {
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlayerThrow(PlayerInteractEvent e) {
-		if (e.getAction() == Action.RIGHT_CLICK_AIR | e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-			Player p = e.getPlayer();
-			Material itemInHand = p.getItemInHand().getType();
-
-			if (itemInHand == Material.REDSTONE_BLOCK) { // Quaffle
-
-				p.getInventory().remove(p.getItemInHand());
-
-				new ThrownQuaffle(p);
-
+		if (Main.game.getGamestate() == Gamestate.STARTED) {
+			if (e.getAction() == Action.RIGHT_CLICK_AIR | e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+				Player p = e.getPlayer();
+				Material itemInHand = p.getItemInHand().getType();
+	
+				if (itemInHand == Material.REDSTONE_BLOCK
+						& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("Quaffel")) { // Quaffle
+	
+					p.getInventory().remove(p.getItemInHand());
+	
+					new ThrownQuaffle(p);
+	
+				}
 			}
 		}
 	}
