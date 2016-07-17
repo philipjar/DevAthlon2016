@@ -31,6 +31,45 @@ public class ConfigManager {
 		return new Location(Bukkit.getWorld(name), x, y, z);
 	}
 	
+	public static int getWinningPoints() {
+		return plugin.getConfig().getInt("winningpoints");
+	}
+	
+	public static void setQuidditchWorldDefaults() {
+		plugin.getConfig().addDefault("worldname", "Quidditch");
+		plugin.getConfig().addDefault("winningpoints", 100);
+		
+		plugin.getConfig().addDefault("location.middle.x", 0);
+		plugin.getConfig().addDefault("location.middle.y", 0);
+		plugin.getConfig().addDefault("location.middle.z", 70);
+		
+		// Gate Locations
+		plugin.getConfig().addDefault("location.gate.a.1.x", 0);
+		plugin.getConfig().addDefault("location.gate.a.1.y", 77);
+		plugin.getConfig().addDefault("location.gate.a.1.z", -69);
+		
+		plugin.getConfig().addDefault("location.gate.a.2.x", 8);
+		plugin.getConfig().addDefault("location.gate.a.2.y", 73);
+		plugin.getConfig().addDefault("location.gate.a.2.z", -69);
+		
+		plugin.getConfig().addDefault("location.gate.a.3.x", -7);
+		plugin.getConfig().addDefault("location.gate.a.3.y", 69);
+		plugin.getConfig().addDefault("location.gate.a.3.z", -69);
+		
+		
+		plugin.getConfig().addDefault("location.gate.b.1.x", 0);
+		plugin.getConfig().addDefault("location.gate.b.1.y", 77);
+		plugin.getConfig().addDefault("location.gate.b.1.z", 70);
+		
+		plugin.getConfig().addDefault("location.gate.b.2.x", -7);
+		plugin.getConfig().addDefault("location.gate.b.2.y", 73);
+		plugin.getConfig().addDefault("location.gate.b.2.z", 70);
+		
+		plugin.getConfig().addDefault("location.gate.b.3.x", 8);
+		plugin.getConfig().addDefault("location.gate.b.3.y", 69);
+		plugin.getConfig().addDefault("location.gate.b.3.z", 70);
+	}
+	
 	
 
 }

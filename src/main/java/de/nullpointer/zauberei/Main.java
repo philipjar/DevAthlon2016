@@ -19,6 +19,7 @@ public class Main extends JavaPlugin {
 		new InteractEvents(this);
 		
 		ConfigManager.plugin = this;
+		ConfigManager.setQuidditchWorldDefaults();
 
 		cListener = new CommandListener(this);
 		getCommand("quiddich").setExecutor(cListener);

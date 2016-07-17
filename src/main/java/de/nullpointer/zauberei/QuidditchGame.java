@@ -31,6 +31,8 @@ public class QuidditchGame {
 
 	private Location middle;
 	
+	private QuidditchThread thread;
+	
 	public QuidditchGame(JavaPlugin plugin) {
 		
 		this.middle = ConfigManager.getMiddleLocation();
@@ -72,13 +74,15 @@ public class QuidditchGame {
 			qp.getPlayer().teleport(middle);
 		}
 		
-		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new QuidditchThread(this), 0L, 2L);
+
+		thread = new QuidditchThread(this);
+		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, thread, 0L, 2L);
 		
 		setGamestate(Gamestate.STARTED);
 	}
 	
 	public void stop() {
-		// Stop game
+		thread.halt();
 		setGamestate(Gamestate.STOPPED);
 	}
 	
