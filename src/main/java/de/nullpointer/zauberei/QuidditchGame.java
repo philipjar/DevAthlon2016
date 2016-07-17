@@ -14,6 +14,12 @@ import main.java.de.nullpointer.zauberei.team.QuidditchTeam;
 
 public class QuidditchGame {
 	
+	public enum Gamestate {
+		READY, 
+		STARTED,
+		STOPPED
+	}
+	
 	private JavaPlugin plugin;
 	
 	protected QuidditchTeam teamA;
