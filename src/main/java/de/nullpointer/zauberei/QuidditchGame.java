@@ -20,6 +20,8 @@ public class QuidditchGame {
 		STOPPED
 	}
 	
+	private Gamestate gamestate = Gamestate.READY;
+	
 	private JavaPlugin plugin;
 	
 	protected QuidditchTeam teamA;
@@ -37,7 +39,16 @@ public class QuidditchGame {
 		
 	}
 	
+	public Gamestate getGamestate() {
+		return this.gamestate;
+	}
+	
+	public void setGamestate(Gamestate state) {
+		this.gamestate = state;
+	}
+	
 	public void start() {
+		
 		boolean a = true;
 		ArrayList<Player> teamListA = new ArrayList<>();
 		ArrayList<Player> teamListB = new ArrayList<>();
@@ -62,6 +73,13 @@ public class QuidditchGame {
 		}
 		
 		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new QuidditchThread(this), 0L, 2L);
+		
+		setGamestate(Gamestate.STARTED);
+	}
+	
+	public void stop() {
+		// Stop game
+		setGamestate(Gamestate.STOPPED);
 	}
 	
 	public ArrayList<QuidditchPlayer> getAllPlayers() {

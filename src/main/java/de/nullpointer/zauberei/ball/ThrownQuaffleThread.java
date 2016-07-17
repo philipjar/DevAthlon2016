@@ -18,6 +18,7 @@ public class ThrownQuaffleThread implements Runnable {
 		
 		while(!quaffle.isOnGround()) {
 			
+			
 			for (QuidditchPlayer qp: Main.game.getAllPlayers()) {
 				if (Util.isNearTo(qp.getPlayer().getEyeLocation(), quaffle.getLocation(), 2)) {
 					quaffle.remove();
