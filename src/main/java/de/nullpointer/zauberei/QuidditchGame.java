@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -61,8 +62,12 @@ public class QuidditchGame {
 		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, thread, 0L, 2L);
 	}
 	
-	public void stop() {
+	public void stop(String name, ChatColor c) {
 		thread.halt();
+		Bukkit.broadcastMessage("Team " + c + " gewinnt dieses Quidditch-Match" + ChatColor.RESET);
+		for (QuidditchPlayer p : getAllPlayers()) {
+			p.removeBroom();
+		}
 	}
 	
 	public ArrayList<QuidditchPlayer> getAllPlayers() {
