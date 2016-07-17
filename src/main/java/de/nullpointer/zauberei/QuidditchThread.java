@@ -54,6 +54,9 @@ public class QuidditchThread implements Runnable {
 		
 		// BIG FAT WHILE LOOP
 		while (!halt) {
+			
+			// TODO: count time
+			
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
