@@ -1,2 +1,9 @@
 # DevAthlon2016
-This repo will contain Spigot Plugins which were created during DevAthlon3, an event hosted by the GommeHD Minecraft network.
+Aufgrung ungünstiger Umstände und fehlender Internetverbindung konnten keine
+Tests durchgeführt werden. Wir hoffen trotzdem, dass zumindest die Idee auf
+positive Resonanz stoßen wird.
+
+In QuidditchWorld.zip befindet sich die benötigte Welt.
+Kompilieren des Projekts mit ’mvn package’.
+Start des Spiels mit ’/quidditch start’.
+
