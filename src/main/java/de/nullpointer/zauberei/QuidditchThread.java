@@ -33,6 +33,7 @@ public class QuidditchThread implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			countdown--;
 		}
 		
 		// LOS
